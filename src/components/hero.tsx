@@ -47,8 +47,8 @@ export function Hero() {
             Jiu-jitsu em {site.address.city} · {site.address.state}
           </motion.h1>
 
-          <p className="mt-6 font-display text-[clamp(3.5rem,10vw,7.25rem)] leading-[0.9] tracking-wide uppercase">
-            {["Desperte o", "leão que", "existe em você"].map((line, i) => (
+          <p className="mt-6 font-display text-[clamp(3.5rem,10vw,7.25rem)] leading-[0.98] tracking-wide uppercase">
+            {["Treine luta.", "Faça amigos.", "Ganhe saúde."].map((line, i) => (
               <span key={line} className="-mt-[0.12em] block overflow-hidden pt-[0.12em]">
                 <motion.span
                   initial={{ y: "100%" }}
@@ -68,8 +68,9 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.55, ease }}
             className="mx-auto mt-6 max-w-lg text-lg text-zinc-400 lg:mx-0"
           >
-            Jiu-jitsu para crianças, mulheres, iniciantes e competidores. Técnica,
-            disciplina e uma equipe que treina junto.
+            Jiu-jitsu em Santa Rita do Sapucaí para crianças, mulheres e adultos.
+            Condicionamento, defesa pessoal e uma equipe que te puxa pra cima. A
+            primeira aula é grátis.
           </motion.p>
 
           <motion.div
