@@ -35,7 +35,7 @@ export const site = {
   shortName: "Gold Lions",
   description:
     "Academia de jiu-jitsu em Santa Rita do Sapucaí - MG. Turmas kids, feminino, iniciante e competição. Agende sua aula experimental gratuita.",
-  url: "https://goldlionsjiujitsu.com.br", // PROVISÓRIO: domínio ainda não definido
+  url: "https://goldlionsjiujitsu.com.br",
   address: { ...address, full: fullAddress },
   maps: {
     embed: `https://www.google.com/maps?q=${mapsQuery}&z=15&output=embed`,
