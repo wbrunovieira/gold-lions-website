@@ -24,8 +24,8 @@ const fullAddress = [
 
 const mapsQuery = encodeURIComponent(fullAddress);
 
-// PROVISÓRIO: número de WhatsApp fictício (somente dígitos, com DDI 55).
-const whatsappNumber = "5535999999999";
+// Somente dígitos, com DDI 55.
+const whatsappNumber = "5535998438819";
 const whatsappMessage = encodeURIComponent(
   "Olá! Quero agendar uma aula experimental na Gold Lions.",
 );
@@ -44,7 +44,7 @@ export const site = {
   },
   whatsapp: {
     number: whatsappNumber,
-    display: "(35) 99999-9999", // PROVISÓRIO
+    display: "(35) 99843-8819",
     link: `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
   },
   instagram: {
