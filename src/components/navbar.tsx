@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import {
   AnimatePresence,
   motion,
@@ -9,6 +8,7 @@ import {
   useScroll,
 } from "motion/react";
 import { Menu, X } from "lucide-react";
+import { LionMark } from "@/components/lion/lion-mark";
 import { navLinks, site } from "@/config/site";
 
 export function Navbar() {
@@ -28,7 +28,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <a href="#inicio" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <Image src="/lion.png" alt="" width={36} height={36} className="size-9" />
+          <LionMark className="h-9 w-auto text-gold" />
           <span className="font-display text-2xl tracking-wider uppercase">
             Gold <span className="text-gold">Lions</span>
           </span>

@@ -1,9 +1,9 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { AnimatedLion } from "@/components/lion/animated-lion";
 import { site } from "@/config/site";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -99,20 +99,10 @@ export function Hero() {
           style={{ y: lionY, opacity: lionOpacity }}
           className="order-1 flex justify-center lg:order-2"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85, filter: "blur(12px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-            transition={{ duration: 1.2, ease }}
-          >
-            <Image
-              src="/lion.png"
-              alt="Leão da Gold Lions Jiu-Jitsu Team"
-              width={640}
-              height={640}
-              priority
-              className="size-56 drop-shadow-[0_0_60px_rgba(254,192,9,0.25)] sm:size-80 lg:size-[30rem]"
-            />
-          </motion.div>
+          <AnimatedLion
+            title="Leão da Gold Lions Jiu-Jitsu Team"
+            className="h-60 w-auto drop-shadow-[0_0_60px_rgba(254,192,9,0.25)] sm:h-88 lg:h-[34rem]"
+          />
         </motion.div>
       </div>
 

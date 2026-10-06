@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { ArrowRight, MapPin } from "lucide-react";
 import { navLinks, site } from "@/config/site";
+import { LionMark } from "@/components/lion/lion-mark";
 import { InstagramIcon, WhatsAppIcon } from "@/components/ui/brand-icons";
 import { Reveal } from "@/components/ui/reveal";
 import WBSignature from "@/components/wb-signature";
@@ -10,13 +10,7 @@ export function FinalCta() {
     <section className="relative overflow-hidden px-4 py-24 sm:px-6 sm:py-32">
       <div className="absolute inset-0 bg-gradient-to-br from-gold via-gold to-gold-deep" />
       <div className="absolute inset-0 bg-grain opacity-[0.12] mix-blend-multiply" />
-      <Image
-        src="/lion.png"
-        alt=""
-        width={640}
-        height={640}
-        className="pointer-events-none absolute -right-24 -bottom-24 size-[28rem] opacity-15 brightness-0 sm:size-[36rem]"
-      />
+      <LionMark className="pointer-events-none absolute -right-20 -bottom-20 h-[30rem] w-auto text-black/15 sm:h-[40rem]" />
       <Reveal className="relative mx-auto max-w-3xl text-center text-black">
         <h2 className="font-display text-6xl leading-[0.9] uppercase sm:text-8xl">
           Seu primeiro treino é por nossa conta
@@ -45,7 +39,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-2">
           <a href="#inicio" className="flex items-center gap-3">
-            <Image src="/lion.png" alt="" width={48} height={48} className="size-12" />
+            <LionMark className="h-12 w-auto text-gold" />
             <span className="font-display text-3xl tracking-wider uppercase">
               Gold <span className="text-gold">Lions</span>
             </span>
