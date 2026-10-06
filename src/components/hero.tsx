@@ -1,50 +1,57 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="flex flex-1 flex-col items-center justify-center px-6 py-32 text-center">
-      <motion.span
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1.5 text-sm text-amber-400"
+    <section className="flex flex-1 flex-col items-center justify-center px-6 py-24 text-center">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <Sparkles className="size-4" />
-        Gold Lions
-      </motion.span>
+        <Image
+          src="/logo.jpg"
+          alt="Gold Lions Jiu-Jitsu Team"
+          width={600}
+          height={600}
+          priority
+          className="size-72 sm:size-96"
+        />
+      </motion.div>
 
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="max-w-3xl text-5xl font-semibold tracking-tight text-balance sm:text-6xl"
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl"
       >
-        Um website moderno, pronto para crescer.
+        Disciplina, técnica e <span className="text-gold">força</span> no
+        tatame.
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
         className="mt-6 max-w-xl text-lg text-zinc-400"
       >
-        Next.js, Tailwind CSS, Motion e Lucide — a base para construir algo
-        incrível.
+        Treine jiu-jitsu com a equipe Gold Lions. Aulas para todas as idades e
+        níveis.
       </motion.p>
 
       <motion.a
         href="#"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.3 }}
+        transition={{ duration: 0.6, delay: 0.5 }}
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.97 }}
-        className="mt-10 inline-flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3 font-medium text-black"
+        className="mt-10 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-3 font-medium text-black"
       >
-        Começar
+        Agende uma aula experimental
         <ArrowRight className="size-4" />
       </motion.a>
     </section>

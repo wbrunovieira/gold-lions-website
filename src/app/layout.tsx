@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Gold Lions",
-  description: "Gold Lions website",
+  title: "Gold Lions Jiu-Jitsu Team",
+  description: "Equipe de jiu-jitsu Gold Lions. Aulas para todas as idades e níveis.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
