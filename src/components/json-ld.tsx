@@ -12,7 +12,6 @@ export function JsonLd() {
       image: `${site.url}/logo.jpg`,
       logo: `${site.url}/logo.jpg`,
       telephone: `+${site.whatsapp.number}`,
-      email: site.email,
       sport: "Brazilian Jiu-Jitsu",
       address: {
         "@type": "PostalAddress",

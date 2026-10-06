@@ -51,7 +51,6 @@ export const site = {
     handle: "@goldlionsjj", // PROVISÓRIO
     link: "https://instagram.com/goldlionsjj",
   },
-  email: "contato@goldlionsjiujitsu.com.br", // PROVISÓRIO
   openingHours: [
     { days: "Segunda a sexta", hours: "06:30 – 21:30" },
     { days: "Sábado", hours: "09:00 – 12:00" },
@@ -62,17 +61,17 @@ export const navLinks = [
   { href: "#sobre", label: "Sobre" },
   { href: "#turmas", label: "Turmas" },
   { href: "#horarios", label: "Horários" },
-  { href: "#professores", label: "Professores" },
+  { href: "#professor", label: "Professor" },
   { href: "#planos", label: "Planos" },
   { href: "#localizacao", label: "Localização" },
 ];
 
-// PROVISÓRIO: números a confirmar com o cliente.
-export const stats = [
-  { value: 150, suffix: "+", label: "Alunos ativos" },
-  { value: 10, suffix: "", label: "Anos de tatame" },
-  { value: 8, suffix: "", label: "Faixas-pretas formados" },
-  { value: 60, suffix: "+", label: "Pódios em campeonatos" },
+// Academia em início de atividade: só fatos reais (nada de alunos/pódios inventados).
+export const stats: { value?: number; text?: string; suffix?: string; label: string }[] = [
+  { value: 10, suffix: "+", label: "Anos de tatame" },
+  { text: "Ed. Física", label: "Professor formado" },
+  { text: "Santa Rita", label: "Professor natural da cidade" },
+  { text: "Grátis", label: "Aula experimental" },
 ];
 
 export type ClassKey =
@@ -198,52 +197,21 @@ export const schedule: {
   },
 ];
 
-// PROVISÓRIO: professores fictícios.
-export const instructors = [
-  {
-    name: "Professor Responsável",
-    belt: "black" as const,
-    degree: "Faixa-preta 3º grau",
-    bio: "Fundador da Gold Lions. Mais de 15 anos de tatame e campeão mineiro e brasileiro.",
-    instagram: "https://instagram.com/goldlionsjj",
-  },
-  {
-    name: "Professor Assistente",
-    belt: "black" as const,
-    degree: "Faixa-preta",
-    bio: "Responsável pelas turmas de competição e No-Gi.",
-    instagram: "https://instagram.com/goldlionsjj",
-  },
-  {
-    name: "Professora Kids & Feminino",
-    belt: "brown" as const,
-    degree: "Faixa-marrom",
-    bio: "Especialista em ensino para crianças e na turma feminina.",
-    instagram: "https://instagram.com/goldlionsjj",
-  },
-];
-
-// PROVISÓRIO: depoimentos fictícios.
-export const testimonials = [
-  {
-    quote:
-      "Comecei sem nenhum preparo físico e fui super bem recebido. Hoje o tatame é a melhor parte do meu dia.",
-    name: "Aluno da turma iniciante",
-    detail: "Faixa azul · 2 anos de treino",
-  },
-  {
-    quote:
-      "Meu filho ficou mais focado e confiante na escola. Os professores têm muito cuidado com as crianças.",
-    name: "Mãe de aluno kids",
-    detail: "Turma Kids",
-  },
-  {
-    quote:
-      "A turma feminina me deu segurança para começar. Ambiente de respeito e muita evolução.",
-    name: "Aluna da turma feminina",
-    detail: "Faixa branca · 1 ano de treino",
-  },
-];
+export const instructor = {
+  name: "José Alfredo",
+  role: "Professor e fundador",
+  bio: [
+    "Natural de Santa Rita do Sapucaí, José Alfredo é engenheiro eletricista e formado em Educação Física, e carrega há muitos anos uma paixão pelo jiu-jitsu.",
+    "A Gold Lions nasce dessa paixão: um espaço para ensinar a arte suave com método, segurança e cuidado com cada aluno, do primeiro treino em diante.",
+  ],
+  highlights: [
+    "Natural de Santa Rita do Sapucaí",
+    "Formado em Educação Física",
+    "Engenheiro eletricista",
+    "Mais de 10 anos de tatame",
+  ],
+  instagram: "https://instagram.com/goldlionsjj", // PROVISÓRIO
+};
 
 // PROVISÓRIO: preços fictícios — confirmar se o cliente quer exibir valores.
 export const plans = [
@@ -304,7 +272,7 @@ export const faqs = [
 // PROVISÓRIO: preencher `src` com as fotos reais (em /public/galeria).
 export const gallery: { src?: string; alt: string; span?: string }[] = [
   { alt: "Treino da turma adulta", span: "sm:col-span-2 sm:row-span-2" },
-  { alt: "Pódio em campeonato", span: "sm:row-span-2" },
+  { alt: "Aula de fundamentos", span: "sm:row-span-2" },
   { alt: "Turma kids" },
   { alt: "Graduação de faixas" },
   { alt: "Equipe reunida", span: "sm:col-span-2" },

@@ -11,7 +11,6 @@ import { Navbar } from "@/components/navbar";
 import { Pricing } from "@/components/pricing";
 import { Schedule } from "@/components/schedule";
 import { Stats } from "@/components/stats";
-import { Testimonials } from "@/components/testimonials";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export default function Home() {
@@ -27,7 +26,6 @@ export default function Home() {
         <Schedule />
         <Instructors />
         <Gallery />
-        <Testimonials />
         <Pricing />
         <Faq />
         <Location />

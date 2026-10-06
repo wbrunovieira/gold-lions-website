@@ -41,8 +41,12 @@ export function Stats() {
             }`}
           >
             <dt className="order-2 text-sm text-muted">{stat.label}</dt>
-            <dd className="order-1 font-display text-6xl text-gold sm:text-7xl">
-              <Counter value={stat.value} suffix={stat.suffix} />
+            <dd className="order-1 font-display text-5xl text-gold sm:text-7xl">
+              {stat.value !== undefined ? (
+                <Counter value={stat.value} suffix={stat.suffix ?? ""} />
+              ) : (
+                stat.text
+              )}
             </dd>
           </div>
         ))}

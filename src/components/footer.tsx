@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import { navLinks, site } from "@/config/site";
 import { InstagramIcon, WhatsAppIcon } from "@/components/ui/brand-icons";
 import { Reveal } from "@/components/ui/reveal";
+import WBSignature from "@/components/wb-signature";
 
 export function FinalCta() {
   return (
@@ -101,19 +102,16 @@ export function Footer() {
                 {site.whatsapp.display}
               </a>
             </li>
-            <li>
-              <a href={`mailto:${site.email}`} className="flex gap-3 break-all hover:text-foreground">
-                <Mail className="mt-0.5 size-4 shrink-0 text-gold" />
-                {site.email}
-              </a>
-            </li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/5">
-        <p className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-zinc-500 sm:px-6">
-          © {new Date().getFullYear()} {site.name}. Todos os direitos reservados.
-        </p>
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-zinc-500 sm:flex-row sm:px-6">
+          <p className="text-center sm:text-left">
+            © {new Date().getFullYear()} {site.name}. Todos os direitos reservados.
+          </p>
+          <WBSignature className="text-zinc-400" />
+        </div>
       </div>
     </footer>
   );

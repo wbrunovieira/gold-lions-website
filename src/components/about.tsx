@@ -33,8 +33,8 @@ export function About() {
             className="aspect-[4/5] rounded-3xl sm:aspect-[5/4] lg:aspect-[4/5]"
           />
           <div className="absolute -bottom-6 left-6 rounded-2xl border border-white/10 bg-black/80 px-6 py-4 backdrop-blur-md">
-            <p className="font-display text-4xl leading-none text-gold">Desde 2015</p>
-            <p className="mt-1 text-sm text-muted">formando atletas e pessoas</p>
+            <p className="font-display text-4xl leading-none text-gold">10+ anos</p>
+            <p className="mt-1 text-sm text-muted">de paixão pelo jiu-jitsu</p>
           </div>
         </Reveal>
 
@@ -48,7 +48,7 @@ export function About() {
                 <span className="text-gold">uma família</span>
               </>
             }
-            description="A Gold Lions nasceu em Santa Rita do Sapucaí com um propósito: levar o jiu-jitsu de verdade para quem quer evoluir, seja para competir, emagrecer, aprender a se defender ou simplesmente ter um lugar para pertencer."
+            description="A Gold Lions chega a Santa Rita do Sapucaí com um propósito: levar o jiu-jitsu de verdade para quem quer evoluir, seja para competir, emagrecer, aprender a se defender ou simplesmente ter um lugar para pertencer. Uma equipe nova, construída treino a treino, e você pode fazer parte dela desde o começo."
           />
 
           <ul className="mt-10 space-y-6">

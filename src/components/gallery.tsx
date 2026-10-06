@@ -51,7 +51,7 @@ export function Gallery() {
               A vida no <span className="text-gold">tatame</span>
             </>
           }
-          description="Treinos, graduações, campeonatos e a resenha depois do treino."
+          description="Treinos, aulas e o dia a dia no tatame."
         />
 
         <div className="mt-16 grid grid-flow-dense auto-rows-[180px] grid-cols-1 gap-3 sm:auto-rows-[220px] sm:grid-cols-4">
