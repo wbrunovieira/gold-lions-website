@@ -37,16 +37,17 @@ export function Hero() {
 
       <div className="relative mx-auto grid w-full max-w-7xl items-center gap-8 px-4 py-16 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:gap-4">
         <motion.div style={{ y: textY }} className="order-2 text-center lg:order-1 lg:text-left">
-          <motion.p
+          {/* O H1 semântico carrega a busca local; o slogan abaixo é o destaque visual. */}
+          <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
-            className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-xs font-semibold tracking-[0.2em] text-gold uppercase"
+            className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 text-[0.68rem] font-semibold tracking-[0.12em] text-gold uppercase sm:text-xs sm:tracking-[0.2em]"
           >
-            {site.address.city} · {site.address.state}
-          </motion.p>
+            Jiu-jitsu em {site.address.city} · {site.address.state}
+          </motion.h1>
 
-          <h1 className="mt-6 font-display text-[clamp(3.5rem,10vw,7.25rem)] leading-[0.9] tracking-wide uppercase">
+          <p className="mt-6 font-display text-[clamp(3.5rem,10vw,7.25rem)] leading-[0.9] tracking-wide uppercase">
             {["Desperte o", "leão que", "existe em você"].map((line, i) => (
               <span key={line} className="-mt-[0.12em] block overflow-hidden pt-[0.12em]">
                 <motion.span
@@ -59,7 +60,7 @@ export function Hero() {
                 </motion.span>
               </span>
             ))}
-          </h1>
+          </p>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

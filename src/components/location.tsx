@@ -39,7 +39,10 @@ export function Location() {
                   <ul className="mt-1 text-muted">
                     {site.openingHours.map((h) => (
                       <li key={h.days}>
-                        {h.days}: <span className="text-zinc-300">{h.hours}</span>
+                        {h.days}:{" "}
+                        <span className="text-zinc-300">
+                          {h.opens} – {h.closes}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -92,6 +95,31 @@ export function Location() {
             />
           </Reveal>
         </div>
+
+        <Reveal className="mt-16 rounded-3xl border border-white/10 bg-surface p-7 sm:p-10">
+          <h3 className="font-display text-3xl tracking-wide uppercase sm:text-4xl">
+            Treine com a gente vindo de toda a <span className="text-gold">região</span>
+          </h3>
+          <p className="mt-3 max-w-2xl text-muted">
+            A Gold Lions fica em {site.address.city} e recebe alunos das cidades vizinhas
+            do Sul de Minas. Toque na sua cidade para ver a rota até o tatame.
+          </p>
+          <ul className="mt-6 flex flex-wrap gap-2">
+            {site.region.map((city) => (
+              <li key={city}>
+                <a
+                  href={`${site.maps.googleMaps}&origin=${encodeURIComponent(`${city} - MG`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-zinc-300 transition-colors hover:border-gold hover:text-gold"
+                >
+                  <Navigation className="size-3.5 text-gold" />
+                  Saindo de {city}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

@@ -51,9 +51,27 @@ export const site = {
     handle: "@goldlionsjj", // PROVISÓRIO
     link: "https://instagram.com/goldlionsjj",
   },
+  // PROVISÓRIO: horários a confirmar. `dayOfWeek` alimenta o JSON-LD.
   openingHours: [
-    { days: "Segunda a sexta", hours: "06:30 – 21:30" },
-    { days: "Sábado", hours: "09:00 – 12:00" },
+    {
+      days: "Segunda a sexta",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "06:30",
+      closes: "21:30",
+    },
+    { days: "Sábado", dayOfWeek: ["Saturday"], opens: "09:00", closes: "12:00" },
+  ],
+  // Cidades vizinhas de onde vêm alunos. Usadas na seção da região e no
+  // areaServed do JSON-LD. Sem páginas por cidade (seriam doorway pages).
+  region: [
+    "Pouso Alegre",
+    "Itajubá",
+    "Cachoeira de Minas",
+    "Piranguinho",
+    "São Sebastião da Bela Vista",
+    "Conceição dos Ouros",
+    "Careaçu",
+    "São José do Alegre",
   ],
 };
 

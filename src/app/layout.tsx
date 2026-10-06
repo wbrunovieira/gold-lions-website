@@ -38,13 +38,11 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.name,
     description: site.description,
-    images: [{ url: "/logo.jpg", width: 600, height: 600, alt: site.name }],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: site.name,
     description: site.description,
-    images: ["/logo.jpg"],
   },
 };
 
