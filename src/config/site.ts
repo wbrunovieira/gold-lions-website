@@ -1,16 +1,15 @@
 // Todos os dados da academia num lugar só. Conteúdo marcado como PROVISÓRIO
 // deve ser trocado pelo que o cliente informar.
 
-// PROVISÓRIO: endereço exato ainda não informado pelo cliente.
 const address = {
-  street: "",
-  neighborhood: "",
+  street: "Rua Coronel Erasmo Cabral, 121",
+  neighborhood: "Centro",
   city: "Santa Rita do Sapucaí",
   state: "MG",
-  postalCode: "",
-  // Centro de Santa Rita do Sapucaí; trocar pelas coordenadas da academia.
-  lat: -22.2521,
-  lng: -45.7034,
+  postalCode: "37536-008",
+  // Nível de rua (OpenStreetMap não tem o número); refinar pelo Perfil do Google.
+  lat: -22.2543,
+  lng: -45.7012,
 };
 
 const fullAddress = [
