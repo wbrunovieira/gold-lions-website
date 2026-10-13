@@ -82,12 +82,12 @@ export const site = {
 };
 
 export const navLinks = [
-  { href: "#historia", label: "História" },
-  { href: "#para-quem", label: "Para quem é" },
-  { href: "#horarios", label: "Horários" },
-  { href: "#professor", label: "Professor" },
-  { href: "#planos", label: "Planos" },
-  { href: "#localizacao", label: "Localização" },
+  { href: "/#historia", label: "História" },
+  { href: "/#para-quem", label: "Para quem é" },
+  { href: "/#horarios", label: "Horários" },
+  { href: "/#professor", label: "Professor" },
+  { href: "/#planos", label: "Planos" },
+  { href: "/#localizacao", label: "Localização" },
 ];
 
 // Academia em início de atividade: só fatos reais (nada de alunos/pódios inventados).
@@ -113,9 +113,12 @@ export const audiences: {
   name: string;
   tag: string;
   description: string;
+  // Página interna sobre o tema; sem ela, o card leva ao WhatsApp.
+  href?: string;
 }[] = [
   {
     key: "iniciantes",
+    href: "/aula-experimental",
     name: "Iniciantes",
     tag: "Do zero",
     description:
@@ -123,6 +126,7 @@ export const audiences: {
   },
   {
     key: "mulheres",
+    href: "/jiu-jitsu-para-mulheres",
     name: "Mulheres",
     tag: "Para elas",
     description:
@@ -137,6 +141,7 @@ export const audiences: {
   },
   {
     key: "defesa",
+    href: "/defesa-pessoal",
     name: "Defesa pessoal",
     tag: "Segurança",
     description:

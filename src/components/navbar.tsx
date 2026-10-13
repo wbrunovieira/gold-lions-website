@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import {
   AnimatePresence,
@@ -27,12 +28,12 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
-        <a href="#inicio" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex items-center gap-2.5" onClick={() => setOpen(false)}>
           <LionMark className="h-9 w-auto text-gold" />
           <span className="font-display text-2xl tracking-wider uppercase">
             Gold <span className="text-gold">Lions</span>
           </span>
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-5 lg:flex xl:gap-8">
           {navLinks.map((link) => (

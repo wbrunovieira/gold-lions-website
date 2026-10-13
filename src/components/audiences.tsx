@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
   ArrowUpRight,
   HeartPulse,
@@ -21,6 +22,12 @@ const icons: Record<AudienceKey, LucideIcon> = {
   amizade: Users,
 };
 
+// Card com página própria navega no site; os demais abrem o WhatsApp.
+function CardLink({ href, ...props }: { href?: string } & React.ComponentProps<"a">) {
+  if (href) return <Link href={href} {...props} />;
+  return <a href={site.whatsapp.link} target="_blank" rel="noopener noreferrer" {...props} />;
+}
+
 export function Audiences() {
   return (
     <section id="para-quem" className="relative bg-surface py-24 sm:py-32">
@@ -40,10 +47,8 @@ export function Audiences() {
             const Icon = icons[c.key];
             return (
               <Reveal key={c.key} delay={0.06 * i} className="h-full">
-                <a
-                  href={site.whatsapp.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <CardLink
+                  href={c.href}
                   className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/8 bg-black p-8 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[0_20px_60px_-20px_rgba(254,192,9,0.25)]"
                 >
                   <div className="absolute -top-20 -right-20 size-48 rounded-full bg-gold/0 blur-3xl transition-colors duration-500 group-hover:bg-gold/15" />
@@ -60,7 +65,7 @@ export function Audiences() {
                     {c.name}
                   </h3>
                   <p className="mt-3 text-muted">{c.description}</p>
-                </a>
+                </CardLink>
               </Reveal>
             );
           })}

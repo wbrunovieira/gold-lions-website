@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Plus } from "lucide-react";
-import { faqs } from "@/config/site";
+import { faqs as defaultFaqs } from "@/config/site";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-export function Faq() {
+export function Faq({ items = defaultFaqs }: { items?: { q: string; a: string }[] }) {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -24,7 +24,7 @@ export function Faq() {
 
         <Reveal className="mt-14">
           <ul className="divide-y divide-white/10 border-y border-white/10">
-            {faqs.map((item, i) => {
+            {items.map((item, i) => {
               const isOpen = open === i;
               return (
                 <li key={item.q}>

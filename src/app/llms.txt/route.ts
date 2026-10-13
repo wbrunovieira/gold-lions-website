@@ -1,3 +1,4 @@
+import { intentPages } from "@/config/intent-pages";
 import { appFeatures, audiences, faqs, history, instructor, schedule, site } from "@/config/site";
 
 // Resumo da academia para buscadores de IA (padrão llms.txt), gerado da config.
@@ -52,6 +53,7 @@ ${faqs.map((f) => `- **${f.q}** ${f.a}`).join("\n")}
 ## Links
 
 - [Site](${site.url}): página completa com horários, planos, professor e localização
+${intentPages.map((p) => `- [${p.breadcrumb}](${site.url}/${p.slug}): ${p.metaDescription}`).join("\n")}
 - [Agendar aula experimental](${site.whatsapp.link}): pelo WhatsApp
 `;
 

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
+import { intentPages } from "@/config/intent-pages";
 import { navLinks, site } from "@/config/site";
 import { LionMark } from "@/components/lion/lion-mark";
 import { InstagramIcon, WhatsAppIcon } from "@/components/ui/brand-icons";
@@ -38,12 +40,12 @@ export function Footer() {
     <footer className="border-t border-white/10 bg-black">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-2">
-          <a href="#inicio" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <LionMark className="h-12 w-auto text-gold" />
             <span className="font-display text-3xl tracking-wider uppercase">
               Gold <span className="text-gold">Lions</span>
             </span>
-          </a>
+          </Link>
           <p className="mt-4 max-w-sm text-muted">
             Jiu-jitsu team em {site.address.city} - {site.address.state}. Disciplina, respeito e garra
             dentro e fora do tatame.
@@ -78,6 +80,13 @@ export function Footer() {
                 <a href={l.href} className="text-muted transition-colors hover:text-foreground">
                   {l.label}
                 </a>
+              </li>
+            ))}
+            {intentPages.map((p) => (
+              <li key={p.slug}>
+                <Link href={`/${p.slug}`} className="text-muted transition-colors hover:text-foreground">
+                  {p.breadcrumb}
+                </Link>
               </li>
             ))}
           </ul>
