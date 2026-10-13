@@ -1,5 +1,5 @@
 import { About } from "@/components/about";
-import { Classes } from "@/components/classes";
+import { Audiences } from "@/components/audiences";
 import { Faq } from "@/components/faq";
 import { FinalCta, Footer } from "@/components/footer";
 import { Gallery } from "@/components/gallery";
@@ -22,7 +22,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <About />
-        <Classes />
+        <Audiences />
         <Schedule />
         <Instructors />
         <Gallery />

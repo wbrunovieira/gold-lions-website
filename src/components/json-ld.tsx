@@ -15,7 +15,7 @@ export function JsonLd() {
       logo: `${site.url}/lion.svg`,
       telephone: `+${site.whatsapp.number}`,
       sport: "Brazilian Jiu-Jitsu",
-      knowsAbout: ["Jiu-jitsu brasileiro", "Jiu-jitsu infantil", "Jiu-jitsu feminino", "No-Gi", "Defesa pessoal"],
+      knowsAbout: ["Jiu-jitsu brasileiro", "Defesa pessoal", "Condicionamento físico"],
       address: {
         "@type": "PostalAddress",
         streetAddress: [site.address.street, site.address.neighborhood].filter(Boolean).join(", ") || undefined,

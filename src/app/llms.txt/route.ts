@@ -1,15 +1,14 @@
-import { classes, faqs, instructor, site } from "@/config/site";
+import { audiences, faqs, instructor, schedule, site } from "@/config/site";
 
 // Resumo da academia para buscadores de IA (padrão llms.txt), gerado da config.
-// Horários e preços ficam de fora até o cliente confirmar — um
-// dado errado aqui é repetido pelas IAs. Turmas e FAQ vêm da config: revisar
-// aqui também quando o cliente confirmar quais turmas a academia oferece.
+// Preços ficam de fora até o cliente confirmar — um dado errado aqui é
+// repetido pelas IAs.
 export const dynamic = "force-static";
 
 export function GET() {
   const body = `# ${site.name}
 
-> Academia de jiu-jitsu brasileiro em ${site.address.city} - ${site.address.state}, no Sul de Minas Gerais. Aulas para crianças, jovens, adultos iniciantes, mulheres e competidores, com aula experimental gratuita.
+> Academia de jiu-jitsu brasileiro em ${site.address.city} - ${site.address.state}, no Sul de Minas Gerais. Uma turma única para todos os níveis, de iniciantes a quem quer competir, com aula experimental gratuita.
 
 ## Contato e localização
 
@@ -26,9 +25,14 @@ ${instructor.highlights.map((h) => `- ${h}`).join("\n")}
 
 ${instructor.bio.join("\n\n")}
 
-## Turmas
+## Horários${schedule.provisional ? " (provisórios)" : ""}
 
-${classes.map((c) => `- ${c.name} (${c.audience}): ${c.description}`).join("\n")}
+${schedule.days}, turma única para todos os níveis:
+${schedule.sessions.map((s) => `- ${s.start} às ${s.end}`).join("\n")}
+
+## Para quem é
+
+${audiences.map((a) => `- ${a.name}: ${a.description}`).join("\n")}
 
 ## Perguntas frequentes
 
@@ -36,7 +40,7 @@ ${faqs.map((f) => `- **${f.q}** ${f.a}`).join("\n")}
 
 ## Links
 
-- [Site](${site.url}): página completa com turmas, horários, planos e localização
+- [Site](${site.url}): página completa com horários, planos, professor e localização
 - [Agendar aula experimental](${site.whatsapp.link}): pelo WhatsApp
 `;
 

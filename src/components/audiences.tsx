@@ -1,42 +1,42 @@
 import {
   ArrowUpRight,
-  Baby,
-  Flame,
-  Medal,
+  HeartPulse,
   Shield,
+  ShieldCheck,
   Sparkles,
   Trophy,
+  Users,
   type LucideIcon,
 } from "lucide-react";
-import { classes, site, type ClassKey } from "@/config/site";
+import { audiences, site, type AudienceKey } from "@/config/site";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-const icons: Record<ClassKey, LucideIcon> = {
-  kids: Baby,
-  juvenil: Medal,
-  iniciante: Sparkles,
-  avancado: Trophy,
-  feminino: Shield,
-  nogi: Flame,
+const icons: Record<AudienceKey, LucideIcon> = {
+  iniciantes: Sparkles,
+  mulheres: ShieldCheck,
+  saude: HeartPulse,
+  defesa: Shield,
+  competicao: Trophy,
+  amizade: Users,
 };
 
-export function Classes() {
+export function Audiences() {
   return (
-    <section id="turmas" className="relative bg-surface py-24 sm:py-32">
+    <section id="para-quem" className="relative bg-surface py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHeading
-          eyebrow="Turmas"
+          eyebrow="Para quem é"
           title={
             <>
-              Um tatame para <span className="text-gold">cada fase</span>
+              Uma turma, <span className="text-gold">todos os níveis</span>
             </>
           }
-          description="Do primeiro dia de faixa branca ao pódio. Escolha a turma que combina com você."
+          description="Iniciantes e graduados treinam juntos, cada um no seu ritmo, com o professor acompanhando de perto. Seja qual for o seu objetivo, tem lugar para você."
         />
 
         <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {classes.map((c, i) => {
+          {audiences.map((c, i) => {
             const Icon = icons[c.key];
             return (
               <Reveal key={c.key} delay={0.06 * i} className="h-full">
@@ -54,7 +54,7 @@ export function Classes() {
                     <ArrowUpRight className="size-5 text-zinc-600 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold" />
                   </div>
                   <p className="mt-8 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
-                    {c.audience}
+                    {c.tag}
                   </p>
                   <h3 className="mt-2 font-display text-4xl tracking-wide uppercase">
                     {c.name}

@@ -33,7 +33,7 @@ export const site = {
   name: "Gold Lions Jiu-Jitsu Team",
   shortName: "Gold Lions",
   description:
-    "Academia de jiu-jitsu em Santa Rita do Sapucaí - MG. Turmas kids, feminino, iniciante e competição. Agende sua aula experimental gratuita.",
+    "Academia de jiu-jitsu em Santa Rita do Sapucaí - MG. Aulas para todos os níveis, de segunda a sexta. Agende sua aula experimental gratuita.",
   url: "https://goldlionsjiujitsu.com.br",
   address: { ...address, full: fullAddress },
   maps: {
@@ -50,15 +50,14 @@ export const site = {
     handle: "@gold_lionsjiujitsu",
     link: "https://www.instagram.com/gold_lionsjiujitsu/",
   },
-  // PROVISÓRIO: horários a confirmar. `dayOfWeek` alimenta o JSON-LD.
+  // Da primeira à última aula da grade. `dayOfWeek` alimenta o JSON-LD.
   openingHours: [
     {
       days: "Segunda a sexta",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "06:30",
-      closes: "21:30",
+      opens: "09:30",
+      closes: "16:00",
     },
-    { days: "Sábado", dayOfWeek: ["Saturday"], opens: "09:00", closes: "12:00" },
   ],
   // Cidades vizinhas de onde vêm alunos. Usadas na seção da região e no
   // areaServed do JSON-LD. Sem páginas por cidade (seriam doorway pages).
@@ -76,7 +75,7 @@ export const site = {
 
 export const navLinks = [
   { href: "#sobre", label: "Sobre" },
-  { href: "#turmas", label: "Turmas" },
+  { href: "#para-quem", label: "Para quem é" },
   { href: "#horarios", label: "Horários" },
   { href: "#professor", label: "Professor" },
   { href: "#planos", label: "Planos" },
@@ -91,128 +90,78 @@ export const stats: { value?: number; text?: string; suffix?: string; label: str
   { text: "Grátis", label: "Aula experimental" },
 ];
 
-export type ClassKey =
-  | "kids"
-  | "juvenil"
-  | "iniciante"
-  | "avancado"
-  | "feminino"
-  | "nogi";
+// Ainda não há divisão de turmas: todos treinam juntos. Estes são os perfis
+// de quem a aula atende, não turmas separadas.
+export type AudienceKey =
+  | "iniciantes"
+  | "mulheres"
+  | "saude"
+  | "defesa"
+  | "competicao"
+  | "amizade";
 
-export const classes: {
-  key: ClassKey;
+export const audiences: {
+  key: AudienceKey;
   name: string;
-  audience: string;
+  tag: string;
   description: string;
 }[] = [
   {
-    key: "kids",
-    name: "Kids",
-    audience: "4 a 12 anos",
+    key: "iniciantes",
+    name: "Iniciantes",
+    tag: "Do zero",
     description:
-      "Coordenação, disciplina e autoconfiança com aulas lúdicas e seguras.",
+      "Nunca treinou? Você aprende os fundamentos no seu ritmo. Ninguém precisa chegar preparado.",
   },
   {
-    key: "juvenil",
-    name: "Juvenil",
-    audience: "13 a 17 anos",
+    key: "mulheres",
+    name: "Mulheres",
+    tag: "Para elas",
     description:
-      "Técnica e preparo para quem quer evoluir rápido e começar a competir.",
+      "Jiu-jitsu e defesa pessoal num ambiente de respeito, com acompanhamento de perto.",
   },
   {
-    key: "iniciante",
-    name: "Adulto Iniciante",
-    audience: "Faixa branca",
+    key: "saude",
+    name: "Saúde",
+    tag: "Condicionamento",
     description:
-      "Fundamentos do zero, no seu ritmo. Ninguém precisa chegar preparado.",
+      "Fôlego, força e mobilidade treinando de um jeito que nem parece academia.",
   },
   {
-    key: "avancado",
-    name: "Avançado & Competição",
-    audience: "Faixas graduadas",
+    key: "defesa",
+    name: "Defesa pessoal",
+    tag: "Segurança",
     description:
-      "Treinos intensos, estratégia de luta e preparação para campeonatos.",
+      "Técnicas que funcionam de verdade para controlar uma situação sem depender de força.",
   },
   {
-    key: "feminino",
-    name: "Feminino",
-    audience: "Só mulheres",
+    key: "competicao",
+    name: "Competição",
+    tag: "Para quem quer lutar",
     description:
-      "Ambiente acolhedor para aprender defesa pessoal e jiu-jitsu entre mulheres.",
+      "Para quem quer ir além: estratégia de luta e preparação para os primeiros campeonatos.",
   },
   {
-    key: "nogi",
-    name: "No-Gi",
-    audience: "Sem kimono",
+    key: "amizade",
+    name: "Amizade",
+    tag: "Equipe",
     description:
-      "Jiu-jitsu de rash guard: mais ritmo, pegadas diferentes e muita transição.",
+      "Uma equipe que treina junto, comemora junto e te puxa pra cima a cada aula.",
   },
 ];
 
-// PROVISÓRIO: grade a confirmar com o cliente.
-export const schedule: {
-  day: string;
-  short: string;
-  sessions: { time: string; class: string }[];
-}[] = [
-  {
-    day: "Segunda",
-    short: "Seg",
-    sessions: [
-      { time: "06:30", class: "Adulto Iniciante" },
-      { time: "17:30", class: "Kids" },
-      { time: "19:00", class: "Adulto Iniciante" },
-      { time: "20:15", class: "Avançado & Competição" },
-    ],
-  },
-  {
-    day: "Terça",
-    short: "Ter",
-    sessions: [
-      { time: "06:30", class: "No-Gi" },
-      { time: "17:30", class: "Juvenil" },
-      { time: "19:00", class: "Feminino" },
-      { time: "20:15", class: "No-Gi" },
-    ],
-  },
-  {
-    day: "Quarta",
-    short: "Qua",
-    sessions: [
-      { time: "06:30", class: "Adulto Iniciante" },
-      { time: "17:30", class: "Kids" },
-      { time: "19:00", class: "Adulto Iniciante" },
-      { time: "20:15", class: "Avançado & Competição" },
-    ],
-  },
-  {
-    day: "Quinta",
-    short: "Qui",
-    sessions: [
-      { time: "06:30", class: "No-Gi" },
-      { time: "17:30", class: "Juvenil" },
-      { time: "19:00", class: "Feminino" },
-      { time: "20:15", class: "Avançado & Competição" },
-    ],
-  },
-  {
-    day: "Sexta",
-    short: "Sex",
-    sessions: [
-      { time: "06:30", class: "Adulto Iniciante" },
-      { time: "17:30", class: "Kids" },
-      { time: "19:00", class: "Treino Livre" },
-    ],
-  },
-  {
-    day: "Sábado",
-    short: "Sáb",
-    sessions: [
-      { time: "09:00", class: "Kids" },
-      { time: "10:30", class: "Treino Livre" },
-    ],
-  },
-];
+// Grade enviada pelo cliente (ainda provisória para ele): aulas gerais,
+// de segunda a sexta, sem turma específica por horário.
+export const schedule = {
+  days: "Segunda a sexta",
+  provisional: true,
+  sessions: [
+    { start: "09:30", end: "10:30" },
+    { start: "11:00", end: "12:00" },
+    { start: "13:00", end: "14:00" },
+    { start: "15:00", end: "16:00" },
+  ],
+};
 
 export const instructor = {
   name: "José Alfredo",
@@ -237,7 +186,7 @@ export const plans = [
     name: "Mensal",
     price: "R$ 150",
     period: "/mês",
-    features: ["Acesso a todas as turmas", "Sem fidelidade", "Aula experimental grátis"],
+    features: ["Todos os horários da semana", "Sem fidelidade", "Aula experimental grátis"],
     highlighted: false,
   },
   {
@@ -245,7 +194,7 @@ export const plans = [
     price: "R$ 130",
     period: "/mês",
     features: [
-      "Acesso a todas as turmas",
+      "Todos os horários da semana",
       "Economia de R$ 60",
       "Camiseta oficial Gold Lions",
     ],
@@ -255,7 +204,7 @@ export const plans = [
     name: "Família",
     price: "R$ 250",
     period: "/mês",
-    features: ["2 pessoas da mesma família", "Acesso a todas as turmas", "Ideal para pais e filhos"],
+    features: ["2 pessoas da mesma família", "Todos os horários da semana", "Para treinar junto"],
     highlighted: false,
   },
 ];
@@ -263,7 +212,7 @@ export const plans = [
 export const faqs = [
   {
     q: "Preciso ter experiência ou preparo físico para começar?",
-    a: "Não. A turma iniciante é feita para quem nunca treinou. O condicionamento vem com o tempo, no seu ritmo.",
+    a: "Não. A aula recebe todos os níveis, e quem está começando aprende os fundamentos no seu ritmo. O condicionamento vem com o tempo.",
   },
   {
     q: "A aula experimental é gratuita?",
@@ -274,26 +223,22 @@ export const faqs = [
     a: "Para a aula experimental, não: venha com roupa de treino confortável. Depois, ajudamos você a escolher o kimono certo.",
   },
   {
-    q: "A partir de que idade as crianças podem treinar?",
-    a: "A turma Kids recebe crianças a partir de 4 anos, com aulas adaptadas para cada faixa etária.",
-  },
-  {
     q: "Jiu-jitsu é seguro?",
     a: "Sim. Os treinos são supervisionados, com foco em técnica e respeito ao parceiro. Ninguém precisa competir.",
   },
   {
-    q: "Mulheres podem treinar nas turmas mistas?",
-    a: "Claro. E também temos uma turma exclusivamente feminina para quem prefere começar por ela.",
+    q: "Mulheres podem treinar?",
+    a: "Claro. As aulas são abertas a todos, num ambiente de respeito, e o professor acompanha cada aluno de perto.",
   },
 ];
 
 // PROVISÓRIO: preencher `src` com as fotos reais (em /public/galeria).
 export const gallery: { src?: string; alt: string; span?: string }[] = [
-  { alt: "Treino da turma adulta", span: "sm:col-span-2 sm:row-span-2" },
+  { alt: "Treino em equipe", span: "sm:col-span-2 sm:row-span-2" },
   { alt: "Aula de fundamentos", span: "sm:row-span-2" },
-  { alt: "Turma kids" },
+  { alt: "Técnica em dupla" },
   { alt: "Graduação de faixas" },
   { alt: "Equipe reunida", span: "sm:col-span-2" },
-  { alt: "Turma feminina" },
-  { alt: "Treino de No-Gi" },
+  { alt: "Defesa pessoal" },
+  { alt: "Condicionamento" },
 ];
