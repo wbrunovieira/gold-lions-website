@@ -61,14 +61,14 @@ function PhoneMockup() {
                 <CirclePlay className="size-5" />
               </span>
               <div className="min-w-0">
-                <p className="text-[0.65rem] tracking-wide text-zinc-500 uppercase">Técnica da aula</p>
+                <p className="text-[0.65rem] tracking-wide text-zinc-400 uppercase">Técnica da aula</p>
                 <p className="truncate text-sm font-semibold">Vídeo e animação 3D</p>
               </div>
             </div>
 
             <div className="rounded-2xl border border-white/8 bg-zinc-900/80 p-3">
               <div className="flex items-center justify-between">
-                <p className="text-[0.65rem] tracking-wide text-zinc-500 uppercase">Sua evolução</p>
+                <p className="text-[0.65rem] tracking-wide text-zinc-400 uppercase">Sua evolução</p>
                 <span className="flex items-center gap-1 text-xs font-semibold text-gold">
                   <Flame className="size-3.5" />
                   Sequência
@@ -108,16 +108,14 @@ export function StudentArea() {
             {appFeatures.map((f, i) => {
               const Icon = icons[f.key];
               return (
-                <Reveal key={f.key} delay={0.04 * i}>
-                  <li className="flex gap-3.5">
-                    <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-gold/10 text-gold">
-                      <Icon className="size-5" />
-                    </span>
-                    <div>
-                      <h3 className="font-semibold">{f.title}</h3>
-                      <p className="mt-0.5 text-sm text-muted">{f.text}</p>
-                    </div>
-                  </li>
+                <Reveal as="li" key={f.key} delay={0.04 * i} className="flex gap-3.5">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-gold/10 text-gold">
+                    <Icon className="size-5" />
+                  </span>
+                  <div>
+                    <h3 className="font-semibold">{f.title}</h3>
+                    <p className="mt-0.5 text-sm text-muted">{f.text}</p>
+                  </div>
                 </Reveal>
               );
             })}
@@ -150,7 +148,7 @@ export function StudentArea() {
 
         <Reveal delay={0.1}>
           <PhoneMockup />
-          <p className="mt-8 text-center text-xs text-zinc-500">
+          <p className="mt-8 text-center text-xs text-zinc-400">
             Plataforma{" "}
             <a
               href={site.studentArea.platformUrl}

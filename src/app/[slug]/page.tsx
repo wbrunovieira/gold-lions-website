@@ -15,17 +15,20 @@ export async function generateMetadata({ params }: PageProps<"/[slug]">): Promis
   const page = intentPages.find((p) => p.slug === slug);
   if (!page) return {};
   return {
-    title: { absolute: `${page.metaTitle} | Gold Lions` },
+    // Sem "| Gold Lions": o Google já mostra o nome do site acima do título.
+    title: { absolute: page.metaTitle },
     description: page.metaDescription,
     alternates: { canonical: `/${page.slug}` },
+    // openGraph/twitter substituem os da raiz por inteiro: repetir siteName e card.
     openGraph: {
       type: "website",
       locale: "pt_BR",
+      siteName: "Gold Lions Jiu-Jitsu Team",
       url: `/${page.slug}`,
       title: page.metaTitle,
       description: page.metaDescription,
     },
-    twitter: { title: page.metaTitle, description: page.metaDescription },
+    twitter: { card: "summary_large_image", title: page.metaTitle, description: page.metaDescription },
   };
 }
 

@@ -17,7 +17,7 @@ const bebas = Bebas_Neue({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Jiu-jitsu em ${site.address.city} - ${site.address.state}`,
+    default: `Jiu-jitsu em ${site.address.city} - ${site.address.state} | ${site.shortName}`,
     template: `%s | ${site.shortName}`,
   },
   description: site.description,

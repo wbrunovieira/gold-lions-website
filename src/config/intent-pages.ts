@@ -33,9 +33,9 @@ export type IntentPage = {
 export const intentPages: IntentPage[] = [
   {
     slug: "aula-experimental",
-    metaTitle: "Aula experimental grátis de jiu-jitsu em Santa Rita do Sapucaí",
+    metaTitle: "Aula grátis de jiu-jitsu em Santa Rita do Sapucaí - MG",
     metaDescription:
-      "Faça uma aula experimental gratuita de jiu-jitsu na Gold Lions, no Centro de Santa Rita do Sapucaí - MG. Todos os níveis, sem precisar de kimono. Agende pelo WhatsApp.",
+      "Aula experimental gratuita de jiu-jitsu na Gold Lions, no Centro de Santa Rita do Sapucaí - MG. Todos os níveis, sem precisar de kimono. Agende no WhatsApp.",
     breadcrumb: "Aula experimental",
     title: ["Aula experimental grátis", "em Santa Rita do Sapucaí"],
     lead: "Venha conhecer a Gold Lions sem pagar nada e sem compromisso. A aula é para todos os níveis: se você nunca treinou, começa do zero, no seu ritmo.",
@@ -61,9 +61,9 @@ export const intentPages: IntentPage[] = [
   },
   {
     slug: "defesa-pessoal",
-    metaTitle: "Defesa pessoal em Santa Rita do Sapucaí com jiu-jitsu",
+    metaTitle: "Defesa pessoal com jiu-jitsu em Santa Rita do Sapucaí",
     metaDescription:
-      "Aprenda defesa pessoal com jiu-jitsu na Gold Lions, em Santa Rita do Sapucaí - MG. Técnica e alavanca em vez de força, para todos os níveis. Primeira aula grátis.",
+      "Defesa pessoal com jiu-jitsu na Gold Lions, em Santa Rita do Sapucaí - MG: técnica e alavanca em vez de força, para todos os níveis. Primeira aula grátis.",
     breadcrumb: "Defesa pessoal",
     title: ["Defesa pessoal com jiu-jitsu", "em Santa Rita do Sapucaí"],
     lead: "O jiu-jitsu ensina a controlar uma situação usando técnica e alavanca, não força. Por isso é uma das artes marciais mais indicadas para defesa pessoal, para pessoas de qualquer porte.",

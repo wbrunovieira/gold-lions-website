@@ -91,31 +91,33 @@ export function IntentPageView({ page }: { page: IntentPage }) {
                 </a>
               </div>
             </div>
-            <Reveal className="mx-auto w-full max-w-[22rem]">
+            {/* Sem Reveal: a foto é o LCP no celular e precisa aparecer no primeiro paint. */}
+            <div className="mx-auto w-full max-w-[22rem]">
               <Image
                 src={page.photo.src}
                 alt={page.photo.alt}
                 placeholder="blur"
-                priority
+                preload
                 sizes="352px"
                 className="h-auto w-full rounded-3xl border border-white/10 shadow-2xl shadow-black/60 lg:rotate-2"
               />
-            </Reveal>
+            </div>
           </div>
         </section>
 
-        <section className="bg-surface py-20 sm:py-28">
+        <section aria-labelledby="beneficios" className="bg-surface py-20 sm:py-28">
           <div className="mx-auto max-w-6xl px-4 sm:px-6">
+            <h2 id="beneficios" className="sr-only">
+              Por que treinar na Gold Lions
+            </h2>
             <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {page.benefits.map(({ icon: Icon, title, text }, i) => (
-                <Reveal key={title} delay={0.06 * i}>
-                  <li className="h-full rounded-3xl border border-white/8 bg-black p-6">
-                    <span className="flex size-12 items-center justify-center rounded-2xl bg-gold/10 text-gold">
-                      <Icon className="size-5" />
-                    </span>
-                    <h2 className="mt-5 font-display text-2xl tracking-wide uppercase">{title}</h2>
-                    <p className="mt-2 text-muted">{text}</p>
-                  </li>
+                <Reveal as="li" key={title} delay={0.06 * i} className="h-full rounded-3xl border border-white/8 bg-black p-6">
+                  <span className="flex size-12 items-center justify-center rounded-2xl bg-gold/10 text-gold">
+                    <Icon className="size-5" />
+                  </span>
+                  <h3 className="mt-5 font-display text-2xl tracking-wide uppercase">{title}</h3>
+                  <p className="mt-2 text-muted">{text}</p>
                 </Reveal>
               ))}
             </ul>
@@ -124,14 +126,12 @@ export function IntentPageView({ page }: { page: IntentPage }) {
               <SectionHeading eyebrow="Na prática" title={page.howTitle} />
               <ol className="mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-3">
                 {page.how.map((step, i) => (
-                  <Reveal key={step.title} delay={0.08 * i}>
-                    <li className="relative h-full rounded-3xl border border-white/8 bg-black p-6 pt-10">
-                      <span className="absolute -top-5 left-6 flex size-10 items-center justify-center rounded-full bg-gold font-display text-2xl text-black">
-                        {i + 1}
-                      </span>
-                      <h3 className="font-semibold">{step.title}</h3>
-                      <p className="mt-2 text-muted">{step.text}</p>
-                    </li>
+                  <Reveal as="li" key={step.title} delay={0.08 * i} className="relative h-full rounded-3xl border border-white/8 bg-black p-6 pt-10">
+                    <span className="absolute -top-5 left-6 flex size-10 items-center justify-center rounded-full bg-gold font-display text-2xl text-black">
+                      {i + 1}
+                    </span>
+                    <h3 className="font-semibold">{step.title}</h3>
+                    <p className="mt-2 text-muted">{step.text}</p>
                   </Reveal>
                 ))}
               </ol>

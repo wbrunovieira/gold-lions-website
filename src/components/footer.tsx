@@ -109,11 +109,12 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/5">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-zinc-500 sm:flex-row sm:px-6">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-6 text-sm text-zinc-400 sm:flex-row sm:px-6">
           <p className="text-center sm:text-left">
             © {new Date().getFullYear()} {site.name}. Todos os direitos reservados.
           </p>
-          <WBSignature className="text-zinc-400" />
+          {/* zinc-300: a assinatura aplica opacity-60 no texto e precisa manter contraste AA. */}
+          <WBSignature className="text-zinc-300" />
         </div>
       </div>
     </footer>

@@ -2,19 +2,24 @@
 
 import { motion } from "motion/react";
 
+// `as="li"` para usar direto dentro de <ul>/<ol> sem um <div> no meio
+// (lista com <div> entre <ul> e <li> é HTML inválido para leitores de tela).
 export function Reveal({
   children,
   delay = 0,
   y = 24,
   className,
+  as = "div",
 }: {
   children: React.ReactNode;
   delay?: number;
   y?: number;
   className?: string;
+  as?: "div" | "li";
 }) {
+  const Component = as === "li" ? motion.li : motion.div;
   return (
-    <motion.div
+    <Component
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -22,6 +27,6 @@ export function Reveal({
       className={className}
     >
       {children}
-    </motion.div>
+    </Component>
   );
 }

@@ -48,6 +48,21 @@ section[id] {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
 
+/* Texto do hero: sobe levemente sem mexer na opacidade, para já contar como
+   pintado no LCP. */
+.hero-rise {
+  animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes hero-rise {
+  from {
+    transform: translateY(0.4em);
+  }
+  to {
+    transform: none;
+  }
+}
+
 /* Leão do hero (AnimatedLion): contorno desenhado -> preenchimento -> brilho. */
 .lion-draw path {
   stroke-dasharray: 1;
@@ -101,5 +116,9 @@ section[id] {
 
   .lion-sheen {
     display: none;
+  }
+
+  .hero-rise {
+    animation: none;
   }
 }

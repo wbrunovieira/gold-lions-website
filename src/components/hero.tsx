@@ -49,29 +49,26 @@ export function Hero() {
 
           <p className="mt-6 font-display text-[clamp(3.5rem,10vw,7.25rem)] leading-[0.98] tracking-wide uppercase">
             {["Treine luta.", "Faça amigos.", "Ganhe saúde."].map((line, i) => (
-              <span key={line} className="-mt-[0.12em] block overflow-hidden pt-[0.12em]">
-                <motion.span
-                  initial={{ y: "100%" }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.15 + i * 0.1, ease }}
-                  className={`block ${i === 2 ? "text-gradient-gold -mt-[0.12em] pt-[0.12em]" : ""}`}
-                >
-                  {line}
-                </motion.span>
+              // Animação em CSS e sem opacidade: o texto aparece no primeiro paint
+              // (é candidato a LCP), sem esperar o JavaScript hidratar.
+              <span
+                key={line}
+                style={{ animationDelay: `${0.1 + i * 0.1}s` }}
+                className={`hero-rise block ${i === 2 ? "text-gradient-gold -mt-[0.12em] pt-[0.12em]" : ""}`}
+              >
+                {line}
               </span>
             ))}
           </p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.55, ease }}
-            className="mx-auto mt-6 max-w-lg text-lg text-zinc-400 lg:mx-0"
+          <p
+            style={{ animationDelay: "0.4s" }}
+            className="hero-rise mx-auto mt-6 max-w-lg text-lg text-zinc-400 lg:mx-0"
           >
             Jiu-jitsu em Santa Rita do Sapucaí para crianças, mulheres e adultos.
             Condicionamento, defesa pessoal e uma equipe que te puxa pra cima. A
             primeira aula é grátis.
-          </motion.p>
+          </p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

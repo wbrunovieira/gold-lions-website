@@ -59,16 +59,14 @@ export function About() {
 
           <ul className="mt-10 space-y-6">
             {values.map(({ icon: Icon, title, text }, i) => (
-              <Reveal key={title} delay={0.1 * i}>
-                <li className="flex gap-4">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-gold/10 text-gold">
-                    <Icon className="size-5" />
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-semibold">{title}</h3>
-                    <p className="text-muted">{text}</p>
-                  </div>
-                </li>
+              <Reveal as="li" key={title} delay={0.1 * i} className="flex gap-4">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-xl border border-gold/20 bg-gold/10 text-gold">
+                  <Icon className="size-5" />
+                </span>
+                <div>
+                  <h3 className="text-lg font-semibold">{title}</h3>
+                  <p className="text-muted">{text}</p>
+                </div>
               </Reveal>
             ))}
           </ul>
