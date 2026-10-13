@@ -154,6 +154,14 @@ export const audiences: {
 // de segunda a sexta, sem turma específica por horário.
 export const schedule = {
   days: "Segunda a sexta",
+  // `dow` segue Date.getDay() (0 = domingo), usado para destacar o dia de hoje.
+  weekdays: [
+    { short: "Seg", long: "Segunda", dow: 1 },
+    { short: "Ter", long: "Terça", dow: 2 },
+    { short: "Qua", long: "Quarta", dow: 3 },
+    { short: "Qui", long: "Quinta", dow: 4 },
+    { short: "Sex", long: "Sexta", dow: 5 },
+  ],
   provisional: true,
   sessions: [
     { start: "09:30", end: "10:30" },
