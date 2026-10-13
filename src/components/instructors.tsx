@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { Check } from "lucide-react";
+import { photos } from "@/config/photos";
 import { instructor } from "@/config/site";
 import { InstagramIcon } from "@/components/ui/brand-icons";
-import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
@@ -9,9 +10,16 @@ export function Instructors() {
   return (
     <section id="professor" className="relative bg-surface py-24 sm:py-32">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        <Reveal className="relative">
+        {/* A foto original tem ~330px: moldura limitada para não ampliar. */}
+        <Reveal className="relative mx-auto w-full max-w-[21rem]">
           <div className="absolute -inset-2 -z-10 -translate-x-2 translate-y-3 rounded-3xl border border-gold/30 sm:-inset-3 sm:-translate-x-5 sm:translate-y-5" />
-          <PhotoPlaceholder label="Foto do professor" className="aspect-[4/5] rounded-3xl" />
+          <Image
+            src={photos.professorJoseAlfredo.src}
+            alt={photos.professorJoseAlfredo.alt}
+            placeholder="blur"
+            sizes="336px"
+            className="h-auto w-full rounded-3xl"
+          />
         </Reveal>
 
         <div>

@@ -1,3 +1,5 @@
+import { photos } from "./photos";
+
 // Todos os dados da academia num lugar só. Conteúdo marcado como PROVISÓRIO
 // deve ser trocado pelo que o cliente informar.
 
@@ -74,7 +76,7 @@ export const site = {
 };
 
 export const navLinks = [
-  { href: "#sobre", label: "Sobre" },
+  { href: "#historia", label: "História" },
   { href: "#para-quem", label: "Para quem é" },
   { href: "#horarios", label: "Horários" },
   { href: "#professor", label: "Professor" },
@@ -240,13 +242,39 @@ export const faqs = [
   },
 ];
 
-// PROVISÓRIO: preencher `src` com as fotos reais (em /public/galeria).
-export const gallery: { src?: string; alt: string; span?: string }[] = [
-  { alt: "Treino em equipe", span: "sm:col-span-2 sm:row-span-2" },
-  { alt: "Aula de fundamentos", span: "sm:row-span-2" },
-  { alt: "Técnica em dupla" },
-  { alt: "Graduação de faixas" },
-  { alt: "Equipe reunida", span: "sm:col-span-2" },
-  { alt: "Defesa pessoal" },
-  { alt: "Condicionamento" },
+// Ordem da galeria (masonry): retrato e paisagem alternados.
+export const gallery = [
+  photos.equipeKimonos,
+  photos.inicioTreinoEmCasa,
+  photos.futuroFitnessTurma,
+  photos.competicaoVitoria,
+  photos.futuroFitnessGalera,
+  photos.professorJoseAlfredo,
 ];
+
+// Texto enviado pelo cliente (1ª pessoa do professor), dividido em etapas.
+export const history = {
+  milestones: [
+    {
+      when: "Há mais de 10 anos",
+      title: "Uma garagem e 6 placas de tatame",
+      text: "Nossa trajetória no Jiu-Jitsu começou há mais de 10 anos, em uma garagem de casa, com apenas 6 placas de tatame e o sonho de compartilhar essa arte com os amigos.",
+      photo: photos.inicioTreinoEmCasa,
+    },
+    {
+      when: "1 ano e meio",
+      title: "Professor na Futuro Fitness",
+      text: "Após anos de dedicação, tive a oportunidade de ministrar aulas durante 1 ano e meio na academia Futuro Fitness, onde ensinei crianças e adultos, fiz grandes amizades e adquiri experiências que contribuíram para meu crescimento como professor.",
+      photo: photos.futuroFitnessTurma,
+    },
+    {
+      when: "2026",
+      title: "Nosso próprio espaço",
+      text: "No início deste ano, nasceu o sonho de construir nosso próprio espaço de treino. Após 5 meses de muito trabalho, dedicação e fé em Deus, esse sonho se tornou realidade.",
+      photo: null,
+      badge: "Aulas desde 08/10",
+    },
+  ],
+  purpose:
+    "Hoje, seguimos com o propósito de ensinar Jiu-Jitsu, transmitir valores como disciplina e respeito e construir uma família dentro e fora do tatame.",
+};

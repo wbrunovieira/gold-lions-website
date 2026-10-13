@@ -1,9 +1,9 @@
+import Image from "next/image";
 import { Flame, HeartHandshake, Target } from "lucide-react";
-import { PhotoPlaceholder } from "@/components/ui/photo-placeholder";
+import { photos } from "@/config/photos";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 
-// PROVISÓRIO: texto institucional até o cliente enviar a história da equipe.
 const values = [
   {
     icon: Target,
@@ -26,15 +26,21 @@ export function About() {
   return (
     <section id="sobre" className="relative overflow-hidden py-24 sm:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-14 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20">
-        <Reveal className="relative">
-          <div className="absolute -inset-2 -z-10 translate-x-2 translate-y-3 sm:-inset-3 sm:translate-x-5 sm:translate-y-5 rounded-3xl border border-gold/30" />
-          <PhotoPlaceholder
-            label="Foto da equipe"
-            className="aspect-[4/5] rounded-3xl sm:aspect-[5/4] lg:aspect-[4/5]"
-          />
-          <div className="absolute -bottom-6 left-6 rounded-2xl border border-white/10 bg-black/80 px-6 py-4 backdrop-blur-md">
+        {/* A foto original tem ~340px: moldura limitada para não ampliar. */}
+        <Reveal className="mx-auto w-full max-w-[22rem]">
+          <div className="relative">
+            <div className="absolute -inset-2 -z-10 translate-x-2 translate-y-3 rounded-3xl border border-gold/30 sm:-inset-3 sm:translate-x-5 sm:translate-y-5" />
+            <Image
+              src={photos.equipeKimonos.src}
+              alt={photos.equipeKimonos.alt}
+              placeholder="blur"
+              sizes="352px"
+              className="h-auto w-full rounded-3xl"
+            />
+          </div>
+          <div className="mt-10 flex items-baseline gap-3 rounded-2xl border border-white/10 bg-surface px-6 py-4">
             <p className="font-display text-4xl leading-none text-gold">10+ anos</p>
-            <p className="mt-1 text-sm text-muted">de paixão pelo jiu-jitsu</p>
+            <p className="text-sm text-muted">de paixão pelo jiu-jitsu</p>
           </div>
         </Reveal>
 

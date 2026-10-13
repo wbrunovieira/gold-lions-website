@@ -1,4 +1,4 @@
-import { audiences, faqs, instructor, schedule, site } from "@/config/site";
+import { audiences, faqs, history, instructor, schedule, site } from "@/config/site";
 
 // Resumo da academia para buscadores de IA (padrão llms.txt), gerado da config.
 // Preços ficam de fora até o cliente confirmar — um dado errado aqui é
@@ -24,6 +24,12 @@ export function GET() {
 ${instructor.highlights.map((h) => `- ${h}`).join("\n")}
 
 ${instructor.bio.join("\n\n")}
+
+## Nossa história
+
+${history.milestones.map((m) => `- ${m.when} — ${m.title}: ${m.text}`).join("\n")}
+
+${history.purpose}
 
 ## Horários${schedule.provisional ? " (provisórios)" : ""}
 

@@ -4,6 +4,7 @@ import { Faq } from "@/components/faq";
 import { FinalCta, Footer } from "@/components/footer";
 import { Gallery } from "@/components/gallery";
 import { Hero } from "@/components/hero";
+import { History } from "@/components/history";
 import { Instructors } from "@/components/instructors";
 import { JsonLd } from "@/components/json-ld";
 import { Location } from "@/components/location";
@@ -22,6 +23,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <About />
+        <History />
         <Audiences />
         <Schedule />
         <Instructors />
