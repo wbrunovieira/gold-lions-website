@@ -47,8 +47,8 @@ export const site = {
     link: `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
   },
   instagram: {
-    handle: "@goldlionsjj", // PROVISÓRIO
-    link: "https://instagram.com/goldlionsjj",
+    handle: "@gold_lionsjiujitsu",
+    link: "https://www.instagram.com/gold_lionsjiujitsu/",
   },
   // PROVISÓRIO: horários a confirmar. `dayOfWeek` alimenta o JSON-LD.
   openingHours: [
@@ -227,7 +227,8 @@ export const instructor = {
     "Engenheiro eletricista",
     "Mais de 10 anos de tatame",
   ],
-  instagram: "https://instagram.com/goldlionsjj", // PROVISÓRIO
+  // Sem perfil pessoal informado: aponta para o Instagram da academia.
+  instagram: "https://www.instagram.com/gold_lionsjiujitsu/",
 };
 
 // PROVISÓRIO: preços fictícios — confirmar se o cliente quer exibir valores.

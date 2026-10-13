@@ -1,7 +1,7 @@
 import { classes, faqs, instructor, site } from "@/config/site";
 
 // Resumo da academia para buscadores de IA (padrão llms.txt), gerado da config.
-// Horários, preços e Instagram ficam de fora até o cliente confirmar — um
+// Horários e preços ficam de fora até o cliente confirmar — um
 // dado errado aqui é repetido pelas IAs. Turmas e FAQ vêm da config: revisar
 // aqui também quando o cliente confirmar quais turmas a academia oferece.
 export const dynamic = "force-static";
@@ -15,6 +15,7 @@ export function GET() {
 
 - Endereço: ${site.address.full}
 - WhatsApp: ${site.whatsapp.display} (${site.whatsapp.link})
+- Instagram: [${site.instagram.handle}](${site.instagram.link})
 - Como chegar: [Google Maps](${site.maps.googleMaps}) · [Waze](${site.maps.waze})
 - Também atende alunos de: ${site.region.join(", ")}
 
