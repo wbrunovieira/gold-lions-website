@@ -7,7 +7,7 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { LogIn, Menu, X } from "lucide-react";
 import { LionMark } from "@/components/lion/lion-mark";
 import { navLinks, site } from "@/config/site";
 
@@ -34,7 +34,7 @@ export function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-8 lg:flex">
+        <ul className="hidden items-center gap-5 lg:flex xl:gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
@@ -47,13 +47,36 @@ export function Navbar() {
           ))}
         </ul>
 
+        <div className="hidden items-center gap-2 lg:flex">
+          <a
+            href={site.studentArea.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 py-1 pr-4 pl-1 text-sm font-semibold backdrop-blur-md transition-colors hover:border-gold/60 hover:text-gold"
+          >
+            <span className="flex size-7 items-center justify-center rounded-full bg-gold/15 text-gold transition-colors group-hover:bg-gold group-hover:text-black">
+              <LogIn className="size-3.5" />
+            </span>
+            Área do aluno
+          </a>
+          <a
+            href={site.whatsapp.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-gold px-5 py-2 text-sm font-semibold text-black transition-transform hover:scale-105"
+          >
+            Aula experimental
+          </a>
+        </div>
+
         <a
-          href={site.whatsapp.link}
+          href={site.studentArea.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden rounded-full bg-gold px-5 py-2 text-sm font-semibold text-black transition-transform hover:scale-105 lg:inline-flex"
+          className="ml-auto mr-1 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold backdrop-blur-md transition-colors hover:border-gold/60 hover:text-gold lg:hidden"
         >
-          Aula experimental
+          <LogIn className="size-3.5 text-gold" />
+          Área do aluno
         </a>
 
         <button
@@ -94,6 +117,17 @@ export function Navbar() {
                 </motion.li>
               ))}
               <li className="pt-4">
+                <a
+                  href={site.studentArea.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-full border border-white/15 py-3 font-semibold"
+                >
+                  <LogIn className="size-4 text-gold" />
+                  Acessar área do aluno
+                </a>
+              </li>
+              <li className="pt-2">
                 <a
                   href={site.whatsapp.link}
                   target="_blank"

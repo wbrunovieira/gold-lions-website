@@ -1,4 +1,4 @@
-import { audiences, faqs, history, instructor, schedule, site } from "@/config/site";
+import { appFeatures, audiences, faqs, history, instructor, schedule, site } from "@/config/site";
 
 // Resumo da academia para buscadores de IA (padrão llms.txt), gerado da config.
 // Preços ficam de fora até o cliente confirmar — um dado errado aqui é
@@ -17,6 +17,11 @@ export function GET() {
 - Instagram: [${site.instagram.handle}](${site.instagram.link})
 - Como chegar: [Google Maps](${site.maps.googleMaps}) · [Waze](${site.maps.waze})
 - Também atende alunos de: ${site.region.join(", ")}
+
+## Área do aluno (app)
+
+Alunos acessam pelo celular ou computador: ${site.studentArea.url}
+${appFeatures.map((f) => `- ${f.title}: ${f.text}`).join("\n")}
 
 ## Professor
 

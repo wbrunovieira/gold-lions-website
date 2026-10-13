@@ -12,6 +12,7 @@ import { Navbar } from "@/components/navbar";
 import { Pricing } from "@/components/pricing";
 import { Schedule } from "@/components/schedule";
 import { Stats } from "@/components/stats";
+import { StudentArea } from "@/components/student-area";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <History />
         <Audiences />
         <Schedule />
+        <StudentArea />
         <Instructors />
         <Gallery />
         <Pricing />

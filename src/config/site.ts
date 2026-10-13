@@ -48,6 +48,12 @@ export const site = {
     display: "(35) 99843-8819",
     link: `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
   },
+  // Plataforma da academia para os alunos (Treino Aliado), com marca Gold Lions.
+  studentArea: {
+    url: "https://goldlions.treinoaliado.com.br/login",
+    platform: "Treino Aliado",
+    platformUrl: "https://treinoaliado.com.br",
+  },
   instagram: {
     handle: "@gold_lionsjiujitsu",
     link: "https://www.instagram.com/gold_lionsjiujitsu/",
@@ -233,6 +239,10 @@ export const faqs = [
     a: "Para a aula experimental, não: venha com roupa de treino confortável. Depois, ajudamos você a escolher o kimono certo.",
   },
   {
+    q: "Tem aplicativo para os alunos?",
+    a: "Sim. Na área do aluno, pelo celular ou pelo computador, você vê suas aulas e as técnicas de cada uma, faz check-in e acompanha sua evolução até a próxima graduação.",
+  },
+  {
     q: "Jiu-jitsu é seguro?",
     a: "Sim. Os treinos são supervisionados, com foco em técnica e respeito ao parceiro. Ninguém precisa competir.",
   },
@@ -250,6 +260,61 @@ export const gallery = [
   photos.competicaoVitoria,
   photos.futuroFitnessGalera,
   photos.professorJoseAlfredo,
+];
+
+// Recursos reais da área do aluno (briefing do time do Treino Aliado).
+// Não citar lojas de app: a publicação na App Store/Google Play não está confirmada.
+export type AppFeatureKey =
+  | "aulas"
+  | "tecnicas"
+  | "checkin"
+  | "evolucao"
+  | "graduacao"
+  | "comunidade"
+  | "treinos"
+  | "avisos";
+
+export const appFeatures: { key: AppFeatureKey; title: string; text: string }[] = [
+  {
+    key: "aulas",
+    title: "Suas aulas",
+    text: "A grade da academia com horário, professor e as técnicas que serão ensinadas em cada aula.",
+  },
+  {
+    key: "tecnicas",
+    title: "Técnicas em vídeo e 3D",
+    text: "Explicação, fotos e vídeo do professor, e animações 3D das posições para revisar em casa.",
+  },
+  {
+    key: "checkin",
+    title: "Check-in",
+    text: "Marque presença pelo celular ou escaneando o QR code na recepção, na hora da aula.",
+  },
+  {
+    key: "evolucao",
+    title: "Sua evolução",
+    text: "Histórico de presença, sequência de treinos e as técnicas do currículo que você já treinou.",
+  },
+  {
+    key: "graduacao",
+    title: "Graduação",
+    text: "Sua faixa e seus graus registrados, e um aviso quando você estiver apto ao próximo.",
+  },
+  {
+    key: "comunidade",
+    title: "Comunidade",
+    text: "O feed da academia com posts, fotos, comentários e reações entre alunos e professor.",
+  },
+  {
+    key: "treinos",
+    title: "Treinos",
+    text: "Rotinas de treino montadas pelo professor para você evoluir também fora do tatame.",
+  },
+  {
+    key: "avisos",
+    title: "Avisos",
+    text: "Notificações de aula, graduação e recados da academia direto no seu perfil.",
+  },
 ];
 
 // Texto enviado pelo cliente (1ª pessoa do professor), dividido em etapas.
